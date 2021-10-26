@@ -6,17 +6,15 @@
 * L’objectif est de permettre à des utilisateurs qui le souhaite de s’entrainer sur des QCM. 
 
 * Les fonctionnalités attendus seront les suivantes :
-
-* Pour les administrateurs / créateurs de QCM
-    * Création de question (une question, entre 2 et 5 réponses, une bonne réponse)
-    * Création de QCM à partir des questions
-    * Création d’utilisateurs
-
-* Pour les utilisateurs
-    * Se connecter
-    * Choisir un QCM sur un sujet qui les intéresse
-    * Effectuer le QCM
-    * Revoir ses scores précédents
+   * Pour les administrateurs / créateurs de QCM
+      * Création de question (une question, entre 2 et 5 réponses, une bonne réponse)
+      * Création de QCM à partir des questions
+      * Création d’utilisateurs
+   * Pour les utilisateurs
+      * Se connecter
+      * Choisir un QCM sur un sujet qui les intéresse
+      * Effectuer le QCM
+      * Revoir ses scores précédents
 
 * L’application devra tourner dans une machine virtuelle sur le cloud. 
 * Le code sera stocké dans un dépôt Git. 
