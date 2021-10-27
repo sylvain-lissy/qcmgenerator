@@ -1,0 +1,9 @@
+:root {
+  --bs-body-font-family:Nexa !important;
+}
+
+@font-face {
+    font-family: Nexa;
+    src: url(../fonts/Nexa-Light.otf);
+    font-display: swap;
+}
