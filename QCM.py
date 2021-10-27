@@ -1,2 +1,0 @@
-class QCM:
-    theme
