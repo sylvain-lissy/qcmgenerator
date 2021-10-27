@@ -1,1 +1,0 @@
-ceci est le dossier de test, il faudra donc ecrire les classes QCM_test et Question_test
