@@ -48,11 +48,28 @@ class QCM:
 
 
     def __str__(self):
-        return self.__nom+":"+self.__theme+":"+str(self.__nombreQuestions)#+":"+self.__listeQuestions
+        return self.__nom+":"+self.__theme+":"+str(self.__nombreQuestions)+":"+self.questionToString()
+
+    def addQuestion(self, idQuestion):
+        self.__listeQuestions.append(idQuestion)
+
+    def questionToString(self):
+        string=""
+        for i in self.__listeQuestions:
+            if string=="":
+                string=str(i)
+            else:
+                string=string+","+str(i)
+        return string
+        
 
 test=QCM("bonjour")
 test2=QCM("bonjour2",20)
 test3=QCM("bonjour3",30,"camembert")
 print(test)
 print(test2)
+print(test3)
+test3.addQuestion(5)
+test3.addQuestion(7)
+test3.addQuestion(9)
 print(test3)
