@@ -2,7 +2,9 @@ class QCM:
 
     def __init__(self, theme, nombreQuestions=10, nom=None):
         self.__theme=theme
-        self.__nombreQuestions=10
+        
+        self.__nombreQuestions=nombreQuestions
+        
         if (nom==None):
             self.__nom=theme
         else:
@@ -44,5 +46,13 @@ class QCM:
     def setNom(self, nom):
         self.__nom=nom
 
+
+    def __str__(self):
+        return self.__nom+":"+self.__theme+":"+str(self.__nombreQuestions)#+":"+self.__listeQuestions
+
 test=QCM("bonjour")
+test2=QCM("bonjour2",20)
+test3=QCM("bonjour3",30,"camembert")
 print(test)
+print(test2)
+print(test3)
