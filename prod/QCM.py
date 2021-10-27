@@ -1,16 +1,16 @@
-class QCM:
+class QCM(object):
 
     def __init__(self, theme, nombreQuestions=10, nom=None):
-        self.__theme=theme
+        self._theme=theme
         
-        self.__nombreQuestions=nombreQuestions
+        self._nombreQuestions=nombreQuestions
         
         if (nom==None):
-            self.__nom=theme
+            self._nom=theme
         else:
-            self.__nom= nom
+            self._nom= nom
             
-        self.__listeQuestions= self.findQuestions(theme, nombreQuestions)
+        self._listeQuestions= self.findQuestions(theme, nombreQuestions)
 
 
     def findQuestions(self, theme, nombreQuestions):
@@ -19,43 +19,51 @@ class QCM:
 
     @property
     def theme(self):
-        return self.__theme
+        return self._theme
     @property
     def nombreQuestions(self):
-        return self.__nombreQuestions
+        return self._nombreQuestions
     @property
     def listeQuestions(self):
-        return self.__listeQuestions
+        return self._listeQuestions
     @property
     def nom(self):
-        return self.__nom
+        return self._nom
 
     @theme.setter
-    def setTheme(self, theme):
-        self.__theme=theme
+    def theme(self, theme):
+        self._theme=str(theme)
         
     @nombreQuestions.setter
-    def setNombreQuestions(self, nombreQuestions):
-        self.__nombreQuestions=nombreQuestions
-        
+    def nombreQuestions(self, nombreQuestions):
+        self._nombreQuestions=nombreQuestions
+
     @listeQuestions.setter
-    def setListeQuestions(self, listeQuestions):
-        self.__listeQuestions=listeQuestions
+    def listeQuestion(self, listeQuestions):
+        self._listeQuestions=listeQuestions
         
     @nom.setter
-    def setNom(self, nom):
-        self.__nom=nom
+    def nom(self, nom):
+        self._nom=nom
 
+# inutile en fait
+#    def __equals__(self, qcm):
+#        if(self.__nom!=qcm.nom): return false
+#        if(self.__theme!=qcm.theme): return false
+#        if(self.__nombreQuestions!=qcm.nombreQuestions): return false
+#        if(len(self.__listeQuestions)!=len(qcm.listeQuestions)): return false
+#        if(self.__listeQuestions.sort()!=qcm.listeQuestions.sort()): return false
+        
 
     def __str__(self):
-        return self.__nom+":"+self.__theme+":"+str(self.__nombreQuestions)+":"+self.questionToString()
+        return self._nom+":"+self._theme+":"+str(self._nombreQuestions)+":"+self.questionToString()
 
     def addQuestion(self, idQuestion):
-        self.__listeQuestions.append(idQuestion)
+        self._listeQuestions.append(idQuestion)
 
     def questionToString(self):
         string=""
-        for i in self.__listeQuestions:
+        for i in self._listeQuestions:
             if string=="":
                 string=str(i)
             else:
@@ -63,13 +71,3 @@ class QCM:
         return string
         
 
-test=QCM("bonjour")
-test2=QCM("bonjour2",20)
-test3=QCM("bonjour3",30,"camembert")
-print(test)
-print(test2)
-print(test3)
-test3.addQuestion(5)
-test3.addQuestion(7)
-test3.addQuestion(9)
-print(test3)
