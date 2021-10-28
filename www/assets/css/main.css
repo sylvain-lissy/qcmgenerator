@@ -7,3 +7,19 @@
     src: url(../fonts/Nexa-Light.otf);
     font-display: swap;
 }
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bs-gray-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:var(--bs-gray); 
+}
+
+body {
+  overflow-y: scroll;
+}
