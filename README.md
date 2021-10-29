@@ -21,3 +21,6 @@
 * Une automatisation de l’intégration de l’application doit être faite (lancement de tests unitaires, contrôle qualité du code, build d’un package avec stockage dans un dépôt de paquet), avec une visualisation des résultats à chaque build.
 * L’application devra être monitorer et les logs centralisés en un seul endroit et accessible à tous.
 * Afin de déployer la VM de l’application, il est demander de produire un ou des playbooks Ansible pour faciliter le déploiement de l’application.
+
+
+## COUCOU
