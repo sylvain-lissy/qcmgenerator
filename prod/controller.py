@@ -8,7 +8,10 @@ def getQCM(theme, nbQuestions = 10):
    array = json.split(':')
    #print(array)
    listeQuestions=array[4].split(',')
-   qcm = QCM(theme, nbQuestions, array[1], listeQuestions)
+   #return "{}:{}:{}:{}".format(theme, nbQuestions, array[1], listeQuestions)
+   qcm = QCM(theme, nbQuestions, array[1])
+   for question in listeQuestions:
+      qcm.addQuestion(int(question))
    return qcm #object qcm
 
 
@@ -30,3 +33,5 @@ def getQuestions(qcm):
 
 #for question in listeQuestions:
 #   print(question)
+
+
