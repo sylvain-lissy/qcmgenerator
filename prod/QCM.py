@@ -1,20 +1,21 @@
 class QCM(object):
 
-    def __init__(self, theme, nombreQuestions=10, nom=None):
+    def __init__(self, theme, nombreQuestions=10, nom=None, listeQuestions=None):
         self._theme=theme
-        
+
         self._nombreQuestions=nombreQuestions
-        
+
         if (nom==None):
             self._nom=theme
         else:
             self._nom= nom
-            
-        self._listeQuestions= self.findQuestions(theme, nombreQuestions)
+
+        self._listeQuestions = listeQuestions
+        #self._listeQuestions= self.findQuestions(theme, nombreQuestions)
 
 
-    def findQuestions(self, theme, nombreQuestions):
-        return []
+    #def findQuestions(self, theme, nombreQuestions):
+        #return []
 
 
     @property
