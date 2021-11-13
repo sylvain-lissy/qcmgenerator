@@ -1,6 +1,6 @@
 class QCM(object):
 
-    def __init__(self, theme, nombreQuestions=10, nom=None, listeQuestions=None):
+    def __init__(self, theme, nombreQuestions=10, nom=None):
         self._theme=theme
 
         self._nombreQuestions=nombreQuestions
@@ -10,13 +10,9 @@ class QCM(object):
         else:
             self._nom= nom
 
-        self._listeQuestions = listeQuestions
-        #self._listeQuestions= self.findQuestions(theme, nombreQuestions)
-
-
-    #def findQuestions(self, theme, nombreQuestions):
-        #return []
-
+        self._listeQuestions = []
+        #self._listeQuestions = listeQuestions
+        # we can't initialize here listeQuestions for some reason?!
 
     @property
     def theme(self):
