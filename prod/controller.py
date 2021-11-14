@@ -27,6 +27,13 @@ def getQuestions(qcm):
       listeQuestions.append(Question(array[1], array[2:6], array[6], [array[7]])) 
    return listeQuestions
 
+def addQCM(nom, theme, nombreQuestion, questions):
+   return bdd.addQCM(nom, theme, nombreQuestion, questions)
+
+def addQuestion(question, reponse, index, theme):
+   #question = Question(question, reponse, index, theme)
+   return bdd.addQuestion(question, reponse, index, theme)
+   
 
 #qcm=getQCM('monsieur beaugosse', 2)
 #listeQuestions=getQuestions(qcm)

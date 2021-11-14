@@ -9,7 +9,7 @@ config = {
     'database': 'data'
 }
 
-
+#_____________________________________________GET_____________________________________________________
 def getQCMs(theme, nbQuestions = 10):
     conn = mariadb.connect(**config)
     cur = conn.cursor()
@@ -57,6 +57,39 @@ def extractQuestionsData(questionCur):
          texte=texte+" : {}".format(elem[6])
          texte=texte+" : {}".format(elem[7])
     return texte
+
+#__________________________________________ ADD _______________________________________________
+
+def addQuestion(question, reponse, numero, theme):
+   conn = mariadb.connect(**config)
+   cur = conn.cursor()
+   cur.execute("SELECT MAX(id) FROM question;")
+   for elem in cur:
+      maxIndex=elem[0]
+   index = 1 + maxIndex
+   try:
+      cur.execute("insert into question values('{}', '{}', '{}', '{}', '{}', '{}', {}, '{}');".format(str(index), question, reponse[0], reponse[>
+      conn.commit()
+   except:
+      conn.rollback()
+   conn.close
+   return "insert into question values('{}', '{}', '{}', '{}', '{}', '{}', {}, '{}');".format(str(index), question, reponse[0], reponse[1], repo>
+
+def addQCM(nom, theme, nombreQuestion, questions):
+   conn = mariadb.connect(**config)
+   cur = conn.cursor()
+   cur.execute("SELECT MAX(id) FROM qcm;")
+   for elem in cur:
+      maxIndex=elem[0]
+   index = 1 + maxIndex
+   try:
+      cur.execute("insert into qcm values({}, '{}', '{}', {}, '{}');".format(index, nom, theme, nombreQuestion, questions))
+      conn.commit()
+   except:
+      conn.rollback()
+   conn.close
+   return "insert into qcm values({}, '{}', '{}', {}, '{}');".format(index, nom, theme, nombreQuestion, questions)
+
 
 
 
