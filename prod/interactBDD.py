@@ -81,7 +81,7 @@ def addQuestion(question, reponse, numero, theme):
    except:
       conn.rollback()
    conn.close
-   return "insert into question values('{}', '{}', '{}', '{}', '{}', '{}', {}, '{}');".format(a, b, c, d, e, f, g, h))
+   return "insert into question values('{}', '{}', '{}', '{}', '{}', '{}', {}, '{}');".format(a, b, c, d, e, f, g, h)
 
 def addQCM(nom, theme, nombreQuestion, questions):
    conn = mariadb.connect(**config)
