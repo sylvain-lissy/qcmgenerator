@@ -67,16 +67,21 @@ def addQuestion(question, reponse, numero, theme):
    for elem in cur:
       maxIndex=elem[0]
    index = 1 + maxIndex
+   a=str(index)
+   b=question
+   c=reponse[0]
+   d=reponse[1]
+   e=reponse[2]
+   f=reponse[3]
+   g=numero
+   h=theme
    try:
-      cur.execute(
-          "insert into question values('{}', '{}', '{}', '{}', '{}', '{}', {}, '{}');"
-          .format(str(index), question, reponse[0], reponse[1], reponse[2], reponse[3], numero, theme))
+      cur.execute("insert into question values('{}', '{}', '{}', '{}', '{}', '{}', {}, '{}');".format(a, b, c, d, e, f, g, h))
       conn.commit()
    except:
       conn.rollback()
    conn.close
-   return "insert into question values('{}', '{}', '{}', '{}', '{}', '{}', {}, '{}');"
-          .format(str(index), question, reponse[0], reponse[1], reponse[2], reponse[3], numero, theme))
+   return "insert into question values('{}', '{}', '{}', '{}', '{}', '{}', {}, '{}');".format(a, b, c, d, e, f, g, h))
 
 def addQCM(nom, theme, nombreQuestion, questions):
    conn = mariadb.connect(**config)
