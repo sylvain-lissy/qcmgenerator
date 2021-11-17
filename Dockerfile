@@ -2,8 +2,6 @@ FROM python:3.8-slim-buster
 
 WORKDIR /www
 
-RUN pip3 install -r requirements.txt
-
 COPY . /www
 
 RUN apt-get update && apt-get install -y \
