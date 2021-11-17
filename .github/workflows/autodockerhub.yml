@@ -1,9 +1,9 @@
-name: Auto-builds docker image
+name: Automatique build and push to docker hub
 
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
     tags:
       - 'v*'
 
