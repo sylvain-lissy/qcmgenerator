@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 
-WORKDIR .
+WORKDIR /appli
 
-COPY . .
+COPY . /appli
 
 RUN apt-get update && apt-get install -y \
     git \
@@ -14,5 +14,7 @@ RUN pip3 install Flask gunicorn
 RUN apt update && apt install -y \
     libmariadb3 \
     libmariadb-dev
+    
+RUN cd appli/ && python3 -m venv venv && . venv/bin/activate
 
 CMD [ "python3", "app.py"]
