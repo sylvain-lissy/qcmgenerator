@@ -15,7 +15,6 @@ RUN apt update && apt install -y \
     libmariadb3 \
     libmariadb-dev
     
-RUN cd appli/ 
 RUN python3 -m venv venv 
 RUN . venv/bin/activate
 
