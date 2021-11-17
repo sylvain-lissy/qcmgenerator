@@ -1,7 +1,7 @@
 # import necessary packages
 
 import sys
-import flask
+from flask import Flask, render_template
 sys.path.insert(1, 'prod/')
 import controller as ctrl
 
