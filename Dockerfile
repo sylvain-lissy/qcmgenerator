@@ -1,4 +1,10 @@
-FROM debian:latest
+FROM python:3.8-slim-buster
+
+WORKDIR /www
+
+RUN pip3 install -r requirements.txt
+
+COPY . /www
 
 RUN apt-get update && apt-get install -y \
     git \
@@ -10,6 +16,4 @@ RUN pip3 install Flask gunicorn
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 
-WORKDIR /www
-
-COPY . /www
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
