@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install Flask gunicorn
 
+RUN apt-get install -y libmariadb3 libmariadb-dev
+
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 
