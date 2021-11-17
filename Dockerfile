@@ -7,7 +7,9 @@ COPY . .
 RUN apt-get update && apt-get install -y \
     git \
     python3 \
-    python3-pip
+    python3-pip \
+    libmariadb3 \
+    libmariadb-dev
 
 RUN pip3 install Flask gunicorn
 
