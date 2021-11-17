@@ -1,8 +1,8 @@
 FROM python:3.8-slim-buster
 
-WORKDIR /www
+WORKDIR .
 
-COPY . /www
+COPY . .
 
 RUN apt-get update && apt-get install -y \
     git \
@@ -14,4 +14,4 @@ RUN pip3 install Flask gunicorn
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+CMD [ "python3", "app.py"]
