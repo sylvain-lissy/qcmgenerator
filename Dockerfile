@@ -11,8 +11,9 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install Flask gunicorn
 
+RUN pip install mariadb
+
 RUN apt-get install -y \
-    mariadb \
     libmariadb3 \
     libmariadb-dev
 
