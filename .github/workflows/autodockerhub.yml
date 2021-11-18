@@ -1,7 +1,7 @@
 name: Automatique build and push to docker hub
 
 on:
-  push:
+  merge:
     branches:
       - 'main'
     tags:
