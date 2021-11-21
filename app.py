@@ -12,24 +12,37 @@ app = flask.Flask(__name__)
 
 app.config["DEBUG"] = True
 
+# the route to show a complete qcm
+# parameters: str theme and int nbQuestions
+# returns a qcm object as string
 @app.route('/qcm', methods=['GET'])
 def qcmString():
    return str(qcm())
 
+
+# the controller returns a qcm object
+# having the theme and the number of questions asked
+# parameters: str theme and int nbQuestions
 def qcm():
    theme='theme'
    nbQuestions=6
    return ctrl.getQCM(theme, nbQuestions)
 
+# the route to show questions from a qcm
+# returns a string containing the questions objects as string
+# separated by "////"
 @app.route('/question', methods=['GET'])
 def getQuestionsQCM():
    myqcm=qcm()
    texte=""
    for question in ctrl.getQuestions(myqcm):
       texte=texte+str(question)+"////"
-   return texte
+   return texte 
 
-
+# the route to add a qcm
+# parameters: str nom, str theme, int nombreQuestion, str questions
+# asks the controller to create a new entry in the database
+# this entry is a qcm with the parameters specified
 @app.route('/addqcm', methods=['GET','POST'])
 def addQCM():
    nom='nom'
@@ -38,6 +51,10 @@ def addQCM():
    questions='1,2,3,4,5,6'
    return ctrl.addQCM(nom, theme, nombreQuestion, questions)
 
+# the route to add a question
+# parameters: str question, array[str] reponse, int index, str theme
+# asks the controller to create a new entry in the database
+# this entry is a question with the parameters specified
 @app.route('/addquestion', methods=['GET','POST'])
 def addQuestion():
    question='question'
