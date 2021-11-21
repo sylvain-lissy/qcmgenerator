@@ -75,6 +75,12 @@ def correctQCM():
    # in the case it is randomized
    return ctrl.correctQCM(qcmID, reponsesDonnees)
 
+# the route to show all the available qcm
+# returns a string containing all the qcm
+# TODO: specify a parameter to have a minimal number of questions
+@app.route('/allQCMs', methods=['POST'])
+def getAllQCMs():
+   return ctrl.getAllQCMs()
 
 # run the app
 

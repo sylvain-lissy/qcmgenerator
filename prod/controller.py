@@ -11,6 +11,10 @@ def getQCM(theme, nbQuestions = 10):
    return qcm #object qcm
 
 
+def getAllQCMs():
+   json = bdd.getAllQCMs(theme, nbQuestions)
+   return json
+
 def getQuestions(qcm):
    listeQuestions=[] # list of question's object
    #print(qcm.listeQuestions)

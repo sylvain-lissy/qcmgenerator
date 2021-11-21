@@ -10,6 +10,11 @@ config = {
 }
 
 #_____________________________________________GET_____________________________________________________
+def getAllQCMs():
+    request = "select * from qcm;"
+    description = connectAndExecuteRequest(request)
+    return extractAllQCMData(description)
+
 def getQCMs(theme, nbQuestions = 10):
     request = "select * from qcm where theme = '{}';".format(theme)
 # TODO ne renvoyer que le premier qui a le theme et le nombre de questions requis
@@ -118,3 +123,16 @@ def extractQCMData(description):
          texte=texte+':'+elem[4]
     return texte
 
+
+def extractAllQCMData(description):
+    texte=""
+    # return the results!
+    
+    for elem in description:
+         texte=""+str(elem[0])
+         texte=texte+':'+elem[1]
+         texte=texte+':'+elem[2]
+         texte=texte+':'+str(elem[3])
+         texte=texte+':'+elem[4]
+         texte=texte+"\n"
+    return texte
