@@ -11,52 +11,32 @@ config = {
 
 #_____________________________________________GET_____________________________________________________
 def getQCMs(theme, nbQuestions = 10):
+    request = "select * from qcm where theme = '{}';".format(theme)
+# TODO ne renvoyer que le premier qui a le theme et le nombre de questions requis
+    description = connectAndExecuteRequest(request)
+    return extractQCMData(description)
+
+def getQCMbyName(name):
+    request = "select * from qcm where name = '{}';".format(name)
+    description = connectAndExecuteRequest(request)
+    return extractQCMData(description)
+
+def connectAndExecuteRequest(request):
     conn = mariadb.connect(**config)
     cur = conn.cursor()
-    cur.execute("select * from qcm where theme = '{}';".format(theme)) 
-# TODO ne renvoyer que le premier qui a le theme et le nombre de questions requis
-
+    cur.execute(request)
+    
     description=cur
     conn.close
+    return description
 
-    texte=""
-    # return the results!
-    
-    for elem in description:
-         texte=""+str(elem[0])
-         texte=texte+':'+elem[1]
-         texte=texte+':'+elem[2]
-         texte=texte+':'+str(elem[3])
-         texte=texte+':'+elem[4]
-    return texte
 
 
 def getQuestions(id):
-    # connection for MariaDB
-    conn = mariadb.connect(**config)
-    # create a connection cursor
-    cur = conn.cursor()
-   
-    # execute a SQL statement
-    cur.execute("select id, question, rep1, rep2, rep3, rep4, numero, themes from question where id = {}".format(id))
-    description=cur
-    conn.close
-
-    # return the results!
+    request = "select id, question, rep1, rep2, rep3, rep4, numero, themes from question where id = {}".format(id)
+    description = connectAndExecuteRequest(request)
     return extractQuestionsData(description)
 
-def extractQuestionsData(questionCur):
-    texte=""
-    for elem in questionCur:
-         texte=texte+"{}".format(elem[0])
-         texte=texte+" : {}".format(elem[1])
-         texte=texte+" : {}".format(elem[2])
-         texte=texte+" : {}".format(elem[3])
-         texte=texte+" : {}".format(elem[4])
-         texte=texte+" : {}".format(elem[5])
-         texte=texte+" : {}".format(elem[6])
-         texte=texte+" : {}".format(elem[7])
-    return texte
 
 #__________________________________________ ADD _______________________________________________
 
@@ -99,5 +79,31 @@ def addQCM(nom, theme, nombreQuestion, questions):
    return "insert into qcm values({}, '{}', '{}', {}, '{}');".format(index, nom, theme, nombreQuestion, questions)
 
 
+#____________________________________request into json ________________________
 
+
+def extractQuestionsData(questionCur):
+    texte=""
+    for elem in questionCur:
+         texte=texte+"{}".format(elem[0])
+         texte=texte+" : {}".format(elem[1])
+         texte=texte+" : {}".format(elem[2])
+         texte=texte+" : {}".format(elem[3])
+         texte=texte+" : {}".format(elem[4])
+         texte=texte+" : {}".format(elem[5])
+         texte=texte+" : {}".format(elem[6])
+         texte=texte+" : {}".format(elem[7])
+    return texte
+
+def extractQCMData(description):
+    texte=""
+    # return the results!
+    
+    for elem in description:
+         texte=""+str(elem[0])
+         texte=texte+':'+elem[1]
+         texte=texte+':'+elem[2]
+         texte=texte+':'+str(elem[3])
+         texte=texte+':'+elem[4]
+    return texte
 

@@ -64,6 +64,15 @@ def addQuestion():
    return ctrl.addQuestion(question, reponse, index, theme)
 
 
+@app.route('/correction', methods=['GET','POST'])
+def correctQCM():
+   qcmName="nomDuQCM" # requires unique names to be specified
+   reponsesDonnees='1,2,3,4,1,2,3,4' # we cannot randomize the order of the questions given because we dont have the questions id here
+   # this means i cant reorder them to make correspond the answer given and the question
+   # in the case it is randomized
+   return ctrl.correctQCM(qcmID, reponsesDonnees)
+
+
 # run the app
 
 app.run()
