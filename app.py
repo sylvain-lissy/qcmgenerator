@@ -82,6 +82,15 @@ def correctQCM():
 def getAllQCMs():
    return ctrl.getAllQCMs()
 
+# the route to show a qcm selectionned by his name
+# parameters: str qcmName
+# returns a string containing the qcm
+@app.route('/qcmByName', methods=['POST'])
+def getAllQCMs():
+   qcmName="nomDuQCM"
+   return ctrl.getQCMbyName(qcmName)
+
+
 # run the app
 
 app.run()
