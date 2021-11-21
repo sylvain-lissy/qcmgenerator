@@ -17,7 +17,7 @@ def getQCMs(theme, nbQuestions = 10):
     return extractQCMData(description)
 
 def getQCMbyName(name):
-    request = "select * from qcm where name = '{}';".format(name)
+    request = "select * from qcm where nom = '{}';".format(name)
     description = connectAndExecuteRequest(request)
     return extractQCMData(description)
 
@@ -70,11 +70,22 @@ def addQCM(nom, theme, nombreQuestion, questions):
    for elem in cur:
       maxIndex=elem[0]
    index = 1 + maxIndex
+
+   # we must verify the given name is not already in the database
+   # otherwise [as the id(index) is unique] we set it as "nomindex"
+   cur.execute("SELECT EXISTS(SELECT * FROM qcm WHERE nom= '{}');".format(nom))
+   for elem in cur:
+      existence=elem[0]==1
+      # true if elem[0] equals 1(true)
+      # and false if elem[0] equals 0(false)
+   if (existence): # name already exists
+       nom=nom+str(index)
+      
    try:
       cur.execute("insert into qcm values({}, '{}', '{}', {}, '{}');".format(index, nom, theme, nombreQuestion, questions))
       conn.commit()
    except:
-      conn.rollback()
+      conn.rollback() # annulation des changements dans le cas où ça a foiré pour garder l'intégrité de la bdd
    conn.close
    return "insert into qcm values({}, '{}', '{}', {}, '{}');".format(index, nom, theme, nombreQuestion, questions)
 

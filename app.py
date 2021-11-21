@@ -63,7 +63,10 @@ def addQuestion():
    theme='theme'
    return ctrl.addQuestion(question, reponse, index, theme)
 
-
+# the route to correct a qcm
+# parameters: str qcmName, str reponsesDonnees
+# u must specify the qcm name in order to get the answers and compare to the given answers
+# returns a string containing the answers and the score 
 @app.route('/correction', methods=['GET','POST'])
 def correctQCM():
    qcmName="nomDuQCM" # requires unique names to be specified
