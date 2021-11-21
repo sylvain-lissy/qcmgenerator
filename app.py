@@ -86,7 +86,7 @@ def getAllQCMs():
 # parameters: str qcmName
 # returns a string containing the qcm
 @app.route('/qcmByName', methods=['POST'])
-def getAllQCMs():
+def getQCMbyName():
    qcmName="nomDuQCM"
    return ctrl.getQCMbyName(qcmName)
 
