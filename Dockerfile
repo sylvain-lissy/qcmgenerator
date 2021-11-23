@@ -1,21 +1,18 @@
-FROM ubuntu:latest
+#FROM ubuntu:latest
 
-WORKDIR /appli
+#WORKDIR /appli
 
-COPY . /appli
+#COPY . /appli
 
-RUN apt-get update && apt-get install -y \
-    git \
-    python3 \
-    python3-pip
+#RUN apt-get update && apt-get install -y \
+#    git \
+#    python3 \
+#    python3-pip
 
-RUN pip3 install Flask gunicorn
+#RUN pip3 install Flask gunicorn
 
-RUN apt update && apt install -y \
-    libmariadb3 \
-    libmariadb-dev
-    
-RUN python3 -m venv venv 
-RUN . venv/bin/activate
+#RUN apt update && apt install -y \
+#    libmariadb3 \
+#    libmariadb-dev
 
-CMD [ "python3", "app.py"]
+#CMD [ "python3", "app.py"]
