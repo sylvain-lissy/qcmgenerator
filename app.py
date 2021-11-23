@@ -2,7 +2,7 @@
 
 import sys
 from flask import Flask, render_template
-sys.path.insert(1, 'prod/')
+sys.path.insert(1, 'qcmgenerator/prod/')
 import controller as ctrl
 
 
