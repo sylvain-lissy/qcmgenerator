@@ -8,7 +8,7 @@ import controller as ctrl
 
 # create the flask app
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
 app.config["DEBUG"] = True
 
