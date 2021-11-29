@@ -35,7 +35,7 @@ spec:
         - containerPort: 8080
         - containerPort: 50000
         volumeMounts:
-        - mountPath: "/var/jenkins_home"
+        - mountPath: /var/jenkins_home
           name: jenkins-volume
         - mountPath: /var/jenkins_home/workspace/qcmgenerator/www
           name: nginx-volume
