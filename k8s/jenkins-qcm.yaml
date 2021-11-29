@@ -37,6 +37,6 @@ spec:
         volumeMounts:
         - mountPath: "/var/jenkins_home"
           name: jenkins-volume
-        - mountPath: "/var/jenkins_home/workspace/qcmgenerator/www"
+        - mountPath: /var/jenkins_home/workspace/qcmgenerator/www
           name: nginx-volume
 

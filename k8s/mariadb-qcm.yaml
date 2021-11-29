@@ -33,5 +33,5 @@ spec:
           - name: MYSQL_ROOT_PASSWORD
             value: pwd
         volumeMounts:
-        - mountPath: "/var/lib/mysql"
+        - mountPath: /var/lib/mysql
           name: mariadb-volume
