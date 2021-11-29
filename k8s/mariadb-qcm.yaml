@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb-qcm
+  labels:
+    app: qcm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb-qcm
+  template:
+    metadata:
+      labels:
+        app: mariadb-qcm
+
+
+    spec:
+
+
+      volumes:
+      - name: mariadb-volume
+        persistentVolumeClaim:
+          claimName: pvc-mariadb
+
+
+      containers:
+      - name: mariadb-qcm
+        image: beefr/mariadb-qcm:latest
+        ports:
+        - containerPort: 3306
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: pwd
+        volumeMounts:
+        - mountPath: "/var/lib/mysql"
+          name: mariadb-volume

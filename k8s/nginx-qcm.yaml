@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: nginx-qcm
+  labels:
+    app: qcm
+
+spec:
+
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-qcm
+  template:
+    metadata:
+      labels:
+        app: nginx-qcm
+
+
+    spec:
+
+      volumes:
+      - name: nginx-volume
+        persistentVolumeClaim:
+          claimName: pvc-nginx
+
+      containers:
+      - name: nginx-qcm
+        image: beefr/nginx-qcm:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: nginx-volume

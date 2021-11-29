@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-qcm
+  labels:
+    app: qcm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-qcm
+  template:
+    metadata:
+      labels:
+        app: jenkins-qcm
+
+
+    spec:
+
+
+      volumes:
+      - name: jenkins-volume
+        persistentVolumeClaim:
+          claimName: pvc-jenkins
+
+      - name: nginx-volume
+        persistentVolumeClaim:
+          claimName: pvc-nginx
+
+
+      containers:
+      - name: jenkins-qcm
+        image: beefr/jenkins_ansible-qcm:latest
+        ports:
+        - containerPort: 8080
+        - containerPort: 50000
+        volumeMounts:
+        - mountPath: "/var/jenkins_home"
+          name: jenkins-volume
+        - mountPath: "/var/jenkins_home/workspace/qcmgenerator/www"
+          name: nginx-volume
+

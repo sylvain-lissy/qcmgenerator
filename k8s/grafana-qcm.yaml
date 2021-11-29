@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana-qcm
+  labels:
+    app: qcm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana-qcm
+  template:
+    metadata:
+      labels:
+        app: grafana-qcm
+
+
+    spec:
+
+
+      containers:
+      - name: grafana-qcm
+        image: beefr/grafana-qcm:latest
+        ports:
+        - containerPort: 3000
