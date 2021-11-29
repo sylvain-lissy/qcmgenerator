@@ -92,5 +92,6 @@ def getQCMbyName():
 
 
 # run the app
+if __name__ == "__main__":
+   app.run(host="192.168.49.2", port=30040)
 
-app.run()
