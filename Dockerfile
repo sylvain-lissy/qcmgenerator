@@ -15,4 +15,5 @@ RUN apt update && apt install -y \
     libmariadb3 \
     libmariadb-dev
 
-CMD [ "python3", "app.py"]
+#CMD [ "python3", "app.py"]
+CMD [ "flask", "run"]
