@@ -1,8 +1,9 @@
 # import necessary packages
-
+import pathlib
+print(pathlib.Path(__file__).parent.resolve())
 import sys
 from flask import Flask, render_template
-sys.path.insert(1, 'qcmgenerator/prod/')
+sys.path.insert(1, '/home/erty/Documents/qcmgenerator/qcmgenerator/prod/')
 import controller as ctrl
 
 
@@ -93,5 +94,5 @@ def getQCMbyName():
 
 # run the app
 if __name__ == "__main__":
-   app.run(host="192.168.49.2", port=30040)
+   app.run(host="127.0.0.1", port=30045)
 
