@@ -51,4 +51,4 @@ curl localhost:5000/addquestion
 ça ajoutera une question à la bdd
 (petit bemol, la database data n'est pas encore créée automatiquement dans mariadb + les tables non plus du coup donc il y aura sûrement une erreur)
 
-
+ah et aussi il faut git clone le repo dans le conteneur jenkins dans /var/jenkins_home/workspace
