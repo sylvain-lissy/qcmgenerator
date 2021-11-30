@@ -3,7 +3,7 @@ import pathlib
 print(pathlib.Path(__file__).parent.resolve())
 import sys
 from flask import Flask, render_template
-sys.path.insert(1, '/home/erty/Documents/qcmgenerator/qcmgenerator/prod/')
+sys.path.insert(1, '/usr/share/nginx/prod/')
 import controller as ctrl
 
 
@@ -94,5 +94,5 @@ def getQCMbyName():
 
 # run the app
 if __name__ == "__main__":
-   app.run(host="127.0.0.1", port=30045)
+   app.run(host="mariadb-service", port=3306)
 
