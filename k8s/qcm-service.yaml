@@ -55,7 +55,7 @@ metadata:
   name: mariadb-service
 
 spec:
-  type: NodePort
+  type: ClusterIP
   selector: 
     app: mariadb-qcm
   ports:
