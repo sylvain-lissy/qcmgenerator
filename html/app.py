@@ -85,7 +85,7 @@ def getAllQCMs():
 
 # the route to show a qcm selectionned by his name
 # parameters: str qcmName
-# returns a string
+# returns a string containing the qcm
 @app.route('/qcmByName', methods=['POST'])
 def getQCMbyName():
    qcmName="nomDuQCM"
@@ -95,3 +95,4 @@ def getQCMbyName():
 # run the app
 if __name__ == "__main__":
    app.run(host="mariadb-service", port=3306)
+

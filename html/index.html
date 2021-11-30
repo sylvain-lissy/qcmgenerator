@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <title>QCMgenerator by SquadTeam#2</title>
+</head>
+
+<body class="bg-dark">
+  <header class="navbar navbar-expand-md navbar-dark bd-navbar">
+    <nav class="container-xxl flex-wrap flex-md-nowrap" aria-label="Main navigation">
+      <i class="text-light">
+        <img src="assets/img/logo.png" alt="" width="128">
+        <i class="d-none d-sm-inline">by SquadTeam#2</i>
+      </i>    
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+        </svg>
+      </button>
+  
+      <div class="collapse navbar-collapse flex-grow-0" id="bdNavbar">
+        <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
+          <li class="nav-item col-4 col-md-auto">
+            <a role="button" class="btn btn-secondary btn-sm me-md-2" href="#">Accueil</a>
+          </li>
+          <li class="nav-item col-4 col-md-auto">
+            <a role="button" class="btn btn-success me-md-2 btn-sm" href="#">Connexion</a>
+          </li>
+          <li class="nav-item col-4 col-md-auto">
+            <a role="button" class="btn btn-primary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#informations" aria-controls="informations">Infos</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="informations" aria-labelledby="informationsLabel">
+    <div class="offcanvas-header bg-light">
+      <h5 class="offcanvas-title" id="informationsLabel">POEI Sopra > Projet final</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body text-light">
+      <details open="">
+          <summary>Le projet</summary>
+          <p>
+            Infos du projet<br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam assumenda laborum omnis, voluptate culpa nostrum sequi, minima dicta in doloribus maiores incidunt nemo nisi cupiditate ratione harum modi vel totam?</p>
+          </p>
+      </details>
+      <details>
+          <summary>Le contexte</summary>
+          <p>
+            Contexte du projet<br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam assumenda laborum omnis, voluptate culpa nostrum sequi, minima dicta in doloribus maiores incidunt nemo nisi cupiditate ratione harum modi vel totam?</p>
+        </p>
+      </details>
+      <details>
+          <summary>Les outils</summary>
+          <p>
+            Outils du projet<br>
+            Lien : <a href="#">Outils O1</a><br>
+            Lien : <a href="#">Outils O2</a><br>
+            Lien : <a href="#">Outils O3</a><br>
+            Lien : <a href="#">Outils O4</a>
+        </p>
+      </details>
+      <details>
+          <summary>Les liens</summary>
+          <p>
+            Liens du projet<br>
+            Lien : <a href="#">Liens L1</a><br>
+            Lien : <a href="#">Liens L2</a><br>
+            Lien : <a href="#">Liens L3</a><br>
+            Lien : <a href="#">Liens L4</a><br>
+            Lien : <a href="#">Liens L5</a>
+        </p>
+      </details>
+      <figure>
+        <figcaption class="blockquote-footer pt-3 text-end">
+          <cite title="Source Title">Guillaume, Adeline, Sylvain, Corentin.</cite>
+        </figcaption>
+      </figure>
+    </div>
+  </div> 
+  <section class="container pt-3">
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+      <div class="d-flex align-items-center fs-3">
+        <i class="bi bi-info-circle-fill pe-3"style="font-size: 1.5rem;"></i>
+        POEI Sopra - Projet final :
+      </div>
+      <figure>
+        <blockquote class="blockquote fs-6">
+          <ul>
+            <li>Développer une application en Python qui permet de stocker des questions et d’afficher des quizz. </li>
+            <li>L’objectif est de permettre à des utilisateurs qui le souhaite de s’entrainer sur des QCM. </li>
+            <li>Les fonctionnalités attendus seront les suivantes :</li>
+            <ul>
+              <li>Pour les administrateurs / créateurs de QCM :</li>
+              <ul>
+                <li>Création de question (une question, entre 2 et 5 réponses, une bonne réponse)</li>
+                <li>Création de QCM à partir des questions</li>
+                <li>Création d’utilisateurs</li>
+              </ul>
+              <li>Pour les utilisateurs :</li>
+              <ul>
+                  <li>Se connecter</li>
+                  <li>Choisir un QCM sur un sujet qui les intéresse</li>
+                  <li>Effectuer le QCM</li>
+                  <li>Revoir ses scores précédents</li>
+              </ul>
+            </ul>
+            <li>L’application devra tourner dans une machine virtuelle sur le cloud. </li>
+            <li>Le code sera stocké dans un dépôt Git. </li>
+            <li>Une automatisation de l’intégration de l’application doit être faite (lancement de tests unitaires, contrôle qualité du code, build d’un package avec stockage dans un dépôt de paquet), avec une visualisation des résultats à chaque build.</li>
+            <li>L’application devra être monitorer et les logs centralisés en un seul endroit et accessible à tous.</li>
+            <li>Afin de déployer la VM de l’application, il est demander de produire un ou des playbooks Ansible pour faciliter le déploiement de l’application.</li>
+          </ul>
+        </blockquote>
+        <figcaption class="blockquote-footer pt-3 text-end">
+          <cite title="Source Title">Guillaume BRIAS, Adeline JACQUEMET, Sylvain LISSY, Corentin RENAULT.</cite>
+        </figcaption>
+      </figure>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </section>
+  <main class="container pb-5">
+    <div class="alert alert-light fade show pb-0" role="alert">
+      <p class="h3">Bienvenu sur le site QCM generator !</p>
+      <p>Ici vous pourrez créer des QCMs, passer des QCMs et consulter vos résultats.<br>Have fun !</p>
+      <p class="text-end pb-0 mb-0">- Adeline, Corentin, Guillaume et Sylvain</p>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card mb-4 mb-lg-0 border-success h-100 shadow">
+          <div class="card-header">
+            <h3 class="card-title h5"><i class="bi bi-list-check pe-2"></i>Choisir un des derniers QCM</h3>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <ul class="list-unstyled">
+                <li><a href="#"><i class="bi bi-play-fill text-success"></i></a> QCM n°277 - One Piece <small class="small text-success">(?10) <small class="text-warning">(animés)</small></small></li>
+                <li><a href="#"><i class="bi bi-play-fill text-success"></i></a> QCM n°276 - Ford <small class="small text-success">(?15) <small class="text-warning">(auto)</small></small></li>
+                <li><a href="#"><i class="bi bi-play-fill text-success"></i></a> QCM n°275 - AC/DC <small class="small text-success">(?20) <small class="text-warning">(musique)</small></small></li>
+                <li><a href="#"><i class="bi bi-play-fill text-success"></i></a> QCM n°274 - Malignant <small class="small text-success">(?7) <small class="text-warning">(films)</small></small></li>
+                <li><a href="#"><i class="bi bi-play-fill text-success"></i></a> QCM n°273 - Python <small class="small text-success">(?32)<small class="text-warning">(prog)</small></small></li>
+                <li>et <i>272</i> QCMs de plus...</li>
+              </ul>
+            </p>
+          </div>
+          <div class="card-footer"><a href="#">Voir tout les QCMs...</a></div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card mb-4 mb-lg-0 border-success h-100 shadow">
+          <div class="card-header">
+            <h3 class="card-title h5"><i class="bi bi-card-heading pe-2"></i>Choisir un QCM par thématiques</h3>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <ul class="list-unstyled">
+                <li><a href="#"><i class="bi bi-eye-fill text-primary"></i></a> Thème Animés <small class="small text-muted"><small>(25) </small></small></li>
+                <li><a href="#"><i class="bi bi-eye-fill text-primary"></i></a> Thème Auto <small class="small text-muted"><small>(17) </small></small></li>
+                <li><a href="#"><i class="bi bi-eye-fill text-primary"></i></a> Thème Musique <small class="small text-muted"><small>(69) </small></small></li>
+                <li><a href="#"><i class="bi bi-eye-fill text-primary"></i></a> Thème Film <small class="small text-muted"><small>(8) </small></small></li>
+                <li><a href="#"><i class="bi bi-eye-fill text-primary"></i></a> Thème Programmation <small class="small text-muted"><small>(42) </small></small></li>
+                <li>et <i>13</i> thèmes de plus...</li>
+              </ul>
+            </p>
+          </div>
+            <div class="card-footer"><a href="#">Voir tout les thèmes...</a></div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card mb-4 mb-lg-0 border-success h-100 shadow">
+          <div class="card-header">
+            <h3 class="card-title h5"><i class="bi bi-arrow-clockwise pe-2"></i>Générer un QCM par thème</h3>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <form>
+                <fieldset disabled>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <div class="form-floating d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-sm"><i class="bi bi-unlock pe-2"></i>se connecter</button>
+                  </div>
+                </fieldset>
+              </form>
+            </p>
+          </div>
+            <div class="card-footer">Pas de compte ? <a href="#">Créer un compte !</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="row pb-5 justify-content-center">
+      <div class="col-12 col-xl-6 mb-3">
+        <div class="card mb-4 mb-lg-0 border-primary h-100 shadow">
+          <img src="./assets/img/ex-qcm-h.svg" class="card-img-top" alt="En-tête QCM One Piece">
+          <div class="card-header">
+            <h3 class="card-title h5 text-center"><i class="bi bi-list-check pe-2"></i>QCM n° 277 - One Piece (animés) - 10 questions </h3>
+          </div>
+          <div class="card-body">
+            <div class="card-text border border-primary mb-2 rounded rounded-3">
+              <p class="bg-primary text-light ps-1 pb-0 m-0">QUESTION 1 :</p>
+              <p class="ps-2">Qui est le personnage principale de One Piece ?</p>
+              <div class="bd-example ps-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_1" id="277_1_1">
+                  <label class="form-check-label" for="277_1">
+                    Eiichiro Oda
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_1" id="277_1_2">
+                  <label class="form-check-label" for="277_1">
+                    Roronoa Zoro
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_1" id="277_1_3">
+                  <label class="form-check-label" for="277_1">
+                    Monky D. Luffy
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_1" id="277_1_4">
+                  <label class="form-check-label" for="277_1">
+                    Makino
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="card-text border border-primary mb-2 rounded rounded-3">
+              <p class="bg-primary text-light ps-1 pb-0 m-0">QUESTION 2 :</p>
+              <p class="ps-2">Qui Luffy rencontre-t-il en premier ?</p>
+              <div class="bd-example ps-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_2" id="277_2_1">
+                  <label class="form-check-label" for="277_2">
+                    Zoro
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="272_2" id="272_2_2">
+                  <label class="form-check-label" for="272_2">
+                    Nami
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="272_2" id="272_2_3">
+                  <label class="form-check-label" for="272_2">
+                    Kobby
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="272_2" id="272_2_4">
+                  <label class="form-check-label" for="272_2">
+                    Hermep
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="card-text border border-primary mb-2 rounded rounded-3">
+              <p class="bg-primary text-light ps-1 pb-0 m-0">QUESTION 3 :</p>
+              <p class="ps-2">Avant d'être cuisinier sur le baratie, Zeff pratiquer quelle "profession", de quoi vivait il ?</p>
+              <div class="bd-example ps-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_3" id="277_3_1">
+                  <label class="form-check-label" for="277_3">
+                    Il était Pirate
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_3" id="277_3_2">
+                  <label class="form-check-label" for="277_3">
+                    Il tenait un restaurant sur Logue Town
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_3" id="277_3_3">
+                  <label class="form-check-label" for="277_3">
+                    Il était dans la marine
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_3" id="277_3_4">
+                  <label class="form-check-label" for="277_3">
+                    Il était grand corsaire
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="card-text border border-primary mb-2 rounded rounded-3">
+              <p class="bg-primary text-light ps-1 pb-0 m-0">QUESTION 4 :</p>
+              <p class="ps-2">Quelle somme Arlong exige-t-il de Nami afin que cette dernière puisse racheter son village ?</p>
+              <div class="bd-example ps-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_4" id="277_4_1">
+                  <label class="form-check-label" for="277_4">
+                    50 000 000 de Berry
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_4" id="277_4_2">
+                  <label class="form-check-label" for="277_4">
+                    Rien, il lui rend son village gratuitement
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_4" id="277_4_3">
+                  <label class="form-check-label" for="277_4">
+                    1 000 000 000 de Berry
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_4" id="277_4_4">
+                  <label class="form-check-label" for="277_4">
+                    100 000 000 de Berry
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="card-text border border-primary mb-2 rounded rounded-3">
+              <p class="bg-primary text-light ps-1 pb-0 m-0">QUESTION 5 :</p>
+              <p class="ps-2">De quel fruit du démon Chopper est-il le détenteur ?</p>
+              <div class="bd-example ps-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_5" id="277_5_1">
+                  <label class="form-check-label" for="277_5">
+                    Le fruit du raton laveur
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_5" id="277_5_2">
+                  <label class="form-check-label" for="277_5">
+                    Le fruit de l'homme
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_5" id="277_5_3">
+                  <label class="form-check-label" for="277_5">
+                    Le fruit du renne
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_5" id="277_5_4">
+                  <label class="form-check-label" for="277_5">
+                    Il n'a pas manger de fruit du démon, il est né avec ses pouvoirs.
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="card-text border border-primary mb-2 rounded rounded-3">
+              <p class="bg-primary text-light ps-1 pb-0 m-0">QUESTION 6 :</p>
+              <p class="ps-2">Comment se nomme le chef des guerriers Shandia ?</p>
+              <div class="bd-example ps-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_6" id="277_6_1">
+                  <label class="form-check-label" for="277_6">
+                    Bellamy
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_6" id="277_6_2">
+                  <label class="form-check-label" for="277_6">
+                    Ener
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_6" id="277_6_3">
+                  <label class="form-check-label" for="277_6">
+                    Gan Forr
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_6" id="277_6_4">
+                  <label class="form-check-label" for="277_6">
+                    Wiper
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="card-text border border-primary mb-2 rounded rounded-3">
+              <p class="bg-primary text-light ps-1 pb-0 m-0">QUESTION 7 :</p>
+              <p class="ps-2">Pour quelle raison Ussop décide de quitter l'équipage ?</p>
+              <div class="bd-example ps-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_7" id="277_7_1">
+                  <label class="form-check-label" for="277_7">
+                    Car il refuse de quitter le Merry alors que le reste de l'équipage est prêt à continuer l'aventure sans lui
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_7" id="277_7_2">
+                  <label class="form-check-label" for="277_7">
+                    Car il a envi de devenir charpentier
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_7" id="277_7_3">
+                  <label class="form-check-label" for="277_7">
+                    Car il s'en veut d'avoir perdu les 200 000 000 de Berry
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_7" id="277_7_4">
+                  <label class="form-check-label" for="277_7">
+                    Car il se trouve trop faible pour continuer l'aventure
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="card-text border border-primary mb-2 rounded rounded-3">
+              <p class="bg-primary text-light ps-1 pb-0 m-0">QUESTION 8 :</p>
+              <p class="ps-2">À Thriller Bark, dans quel zombie l'ombre de Luffy s'est elle retrouvé ?</p>
+              <div class="bd-example ps-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_8" id="277_8_1">
+                  <label class="form-check-label" for="277_8">
+                    Absalom
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_8" id="277_8_2">
+                  <label class="form-check-label" for="277_8">
+                    Oz
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_8" id="277_8_3">
+                  <label class="form-check-label" for="277_8">
+                    Laura la facochère
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_8" id="277_8_4">
+                  <label class="form-check-label" for="277_8">
+                    Luffy ne s'est pas fait voler son ombre
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="card-text border border-primary mb-2 rounded rounded-3">
+              <p class="bg-primary text-light ps-1 pb-0 m-0">QUESTION 9 :</p>
+              <p class="ps-2">Qui est Camie ?</p>
+              <div class="bd-example ps-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_9" id="277_9_1">
+                  <label class="form-check-label" for="277_9">
+                    Une sirène
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_9" id="277_9_2">
+                  <label class="form-check-label" for="277_9">
+                    Une chasseuse de prime
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_9" id="277_9_3">
+                  <label class="form-check-label" for="277_9">
+                    Une géante
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_9" id="277_9_4">
+                  <label class="form-check-label" for="277_9">
+                    Une étoile de mer
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="card-text border border-primary mb-2 rounded rounded-3">
+              <p class="bg-primary text-light ps-1 pb-0 m-0">QUESTION 10 :</p>
+              <p class="ps-2">Sur Amazon Lily, qu'apprend Luffy par le journal ?</p>
+              <div class="bd-example ps-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_10" id="277_10_1">
+                  <label class="form-check-label" for="277_10">
+                    L'exécution de Gol D. Roger
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_10" id="277_10_2">
+                  <label class="form-check-label" for="277_10">
+                    Que Monkey D. Dragon est son père
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_10" id="277_10_3">
+                  <label class="form-check-label" for="277_10">
+                    L'exécution d'Ace
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="277_10" id="277_10_4">
+                  <label class="form-check-label" for="277_10">
+                    Que Shanks est un empereur
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-floating d-grid gap-2">
+              <button type="submit" class="btn btn-success btn-sm">Valider le Quizz<i class="bi bi-check2 ps-2"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  <footer class="footer fixed-bottom bg-dark">
+    <div class="container">
+      <p class="text-muted text-center small mb-0">© 2021 - Guillaume BRIAS, Adeline JACQUEMET, Sylvain LISSY, Corentin RENAULT</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
