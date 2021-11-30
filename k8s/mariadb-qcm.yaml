@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: mariadb-qcm
   labels:
-    app: qcm
+    app: mariadb-qcm
 spec:
   replicas: 1
   selector:

@@ -3,7 +3,7 @@ kind: Deployment
 metadata: 
   name: nginx-qcm
   labels:
-    app: qcm
+    app: nginx-qcm
 
 spec:
 

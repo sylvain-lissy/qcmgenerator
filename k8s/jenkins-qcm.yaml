@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: jenkins-qcm
   labels:
-    app: qcm
+    app: jenkins-qcm
 spec:
   replicas: 1
   selector:

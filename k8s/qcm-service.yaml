@@ -9,11 +9,15 @@ spec:
   selector:
     app: nginx-qcm
   ports:
-    - port: 8081
+    - name: http
+      port: 8081
       protocol: TCP
       targetPort: 80
       nodePort: 30036
-
+    - name: tcp-mysql
+      port: 3306
+      targetPort: 3306
+      protocol: TCP
 
 ---
 
@@ -55,10 +59,10 @@ spec:
   selector: 
     app: mariadb-qcm
   ports:
-  - port: 3306
+  - name: tcp-mysql
+    port: 3306
     protocol: TCP
     targetPort: 3306
-    nodePort: 30041  
 
 ---
 

@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: grafana-qcm
   labels:
-    app: qcm
+    app: grafana-qcm
 spec:
   replicas: 1
   selector:
