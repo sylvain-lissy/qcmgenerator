@@ -25,10 +25,22 @@ spec:
           claimName: pvc-nginx
 
       containers:
+
       - name: nginx-qcm
-        image: beefr/nginx-qcm:latest
+        image: guillaumebrias/nginx-qcm:latest
         ports:
         - containerPort: 80
         volumeMounts:
         - mountPath: /usr/share/nginx
           name: nginx-volume
+        env:
+        - name: FLASK_APP
+          value: /usr/share/nginx/html/app.py
+# avec ça on a l'index
+#        command: ["/bin/sh","-c"]
+#        args: ["rm -r /usr/share/nginx/html/*; cp -r /usr/share/nginx/backuphtml/* /usr/share/nginx/html/"]
+# donc grosso modo faudrait reussir à faire tourner l'autre mais avec l'index encore up...
+
+# avec ça on a flask
+#        command: ["/bin/sh","-c"]
+#        args: ["rm -r /usr/share/nginx/html/*; cp -r /usr/share/nginx/backuphtml/* /usr/share/nginx/html/; export FLASK_APP=$(FLASK_APP); flask run"]
