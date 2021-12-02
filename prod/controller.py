@@ -61,7 +61,7 @@ def getQCMbyName(name):
 def constructQCMobject(json):
    array = json.split(':')
    listeQuestions=array[4].split(',')
-   qcm = QCM(theme, nbQuestions, name)
+   qcm = QCM(array[2], array[3], array[1])
    for question in listeQuestions:
       qcm.addQuestion(int(question))
    return qcm
