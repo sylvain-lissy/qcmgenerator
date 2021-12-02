@@ -36,11 +36,15 @@ spec:
         env:
         - name: FLASK_APP
           value: /usr/share/nginx/html/app.py
+        - name: BACKUPHTML
+          value: /usr/share/nginx/backuphtml
+        - name: HTML
+          value: /usr/share/nginx/html 
 # avec ça on a l'index
 #        command: ["/bin/sh","-c"]
-#        args: ["rm -r /usr/share/nginx/html/*; cp -r /usr/share/nginx/backuphtml/* /usr/share/nginx/html/"]
+#        args: ["rm -r $(HTML)/*; cp -r $(BACKUPHTML)/* $(HTML)/"]
 # donc grosso modo faudrait reussir à faire tourner l'autre mais avec l'index encore up...
 
 # avec ça on a flask
-#        command: ["/bin/sh","-c"]
-#        args: ["rm -r /usr/share/nginx/html/*; cp -r /usr/share/nginx/backuphtml/* /usr/share/nginx/html/; export FLASK_APP=$(FLASK_APP); flask run"]
+        command: ["/bin/sh","-c"]
+        args: ["rm -r $(HTML)/*; cp -r $(BACKUPHTML)/* $(HTML)/; export FLASK_APP=$(FLASK_APP); flask run"]
