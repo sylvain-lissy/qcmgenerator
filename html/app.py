@@ -79,14 +79,14 @@ def correctQCM():
 # the route to show all the available qcm
 # returns a string containing all the qcm
 # TODO: specify a parameter to have a minimal number of questions
-@app.route('/allQCMs', methods=['POST'])
+@app.route('/allQCMs', methods=['GET','POST'])
 def getAllQCMs():
    return ctrl.getAllQCMs()
 
 # the route to show a qcm selectionned by his name
 # parameters: str qcmName
 # returns a string containing the qcm
-@app.route('/qcmByName', methods=['POST'])
+@app.route('/qcmByName', methods=['GET','POST'])
 def getQCMbyName():
    qcmName="nomDuQCM"
    return ctrl.getQCMbyName(qcmName)
